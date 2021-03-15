@@ -77,5 +77,10 @@ stop.addEventListener("click", function(){
 
 reset.addEventListener("click", function(){
     clearInterval(interval);
+    hours        = 0;
+    minutes      = 0;
+    seconds      = 0;
+    milliseconds = 0;
+
     timer_display.innerHTML = "00:00:00:00"
 })
