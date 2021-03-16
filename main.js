@@ -66,14 +66,29 @@ start.addEventListener("click", function(){
    interval = setInterval(stopWatch, 10);
 })
 
+document.getElementById("start").onclick = function(){
+    start.disabled = true;
+    stop.disabled  = false;
+    reset.disabled = false;
+}
 
 // ストップボタン
+
+stop.disabled = true;
 
 stop.addEventListener("click", function(){
     clearInterval(interval);
 })
 
+document.getElementById("stop").onclick = function(){
+    start.disabled = false;
+    stop.disabled  = true;
+    reset.disabled = false;
+}
+
 // リセットボタン
+
+reset.disabled = true;
 
 reset.addEventListener("click", function(){
     clearInterval(interval);
@@ -82,5 +97,11 @@ reset.addEventListener("click", function(){
     seconds      = 0;
     milliseconds = 0;
 
-    timer_display.innerHTML = "00:00:00:00"
+    timer_display.innerHTML = "00:00:00:00";
 })
+
+document.getElementById("reset").onclick = function(){
+    start.disabled = false;
+    stop.disabled  = true;
+    reset.disabled = true;
+}
